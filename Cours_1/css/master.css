@@ -1,16 +1,17 @@
 * {
   box-sizing: border-box;
-}
-html body {
   font-family: Georgia, serif;
   font-size: 1.2em;
-  color:black;
+}
+html body {
+
+  color:white;
   margin: 0;
   padding: 0;
 }
 body {
   text-align: center;
-  background: #E8EFB7;
+  background: linear-gradient(45deg, #49a09d, #5f2c82);
 }
 a {
   text-decoration: none;
