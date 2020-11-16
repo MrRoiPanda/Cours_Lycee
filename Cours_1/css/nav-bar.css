@@ -1,0 +1,35 @@
+nav.nav-bar {
+  width: 100%;
+  background:  #424558;
+  background-image: url(Cours_Lycee/Cours_1/img/Chevrollier.jpg);
+}
+nav.nav-bar ul {
+  margin: 0;
+  padding: 0;
+}
+nav.nav-bar ul li {
+  list-style-type: none;
+}
+.nav-bar-link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 20px 30px;
+  color: black;
+  border-top: 5px solid #424558;
+}
+.accueil:hover {
+  border-top: 5px solid #E44D26;
+  background-color: rgba(228, 77, 38, 0.15);
+}
+.edt:hover {
+  border-top: 5px solid #0070BB;
+  background-color: rgba(0, 112, 192, 0.15);
+}
+.stage:hover {
+  border-top: 5px solid #F1DC4F;
+  background-color: rgba(241, 211, 79, 0.15);
+}
+.ressources:hover {
+  border-top: 5px solid #E44D26;
+  background-color: rgba(220, 220, 220, 0.15);
+}

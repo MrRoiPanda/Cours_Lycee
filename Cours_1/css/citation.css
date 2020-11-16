@@ -1,0 +1,16 @@
+/*----------------------Citation-------------------------*/
+.citations p {
+  color: blue;
+  font-size: 1.5em;
+}
+.citations p.normal {
+  font: normal;
+  text-decoration: underline;
+}
+.citations p.italic {
+  font-style: italic;
+}
+.citations p.bold {
+  font-weight: bold;
+  text-decoration: underline;
+}

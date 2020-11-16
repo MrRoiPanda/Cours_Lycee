@@ -4,9 +4,19 @@
 html body {
   font-family: Georgia, serif;
   font-size: 1.2em;
+  color:black;
   margin: 0;
+  padding: 0;
 }
 body {
   text-align: center;
-  background: green;
+  background: #E8EFB7;
+}
+a {
+  text-decoration: underline;
+  color: purple;
+}
+
+/*----------------------Table-------------------------*/
+table {
 }
