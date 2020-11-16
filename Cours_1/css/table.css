@@ -2,5 +2,26 @@
 table {
   margin: 0 auto;
   border-collapse: collapse;
-  background-color: #E8EFB7;
+/*  background-color: #E8EFB7;*/
+}
+table {
+  background: linear-gradient(45deg, #49a09d, #5f2c82);
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+th{
+  padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+  background-color: #55608f;
+}
+
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+tr:hover {
+			background-color: rgba(255,255,255,0.3);
 }
