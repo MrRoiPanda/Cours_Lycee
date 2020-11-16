@@ -1,14 +1,13 @@
 nav.nav-bar {
-  width: 100%;
   background:  #424558;
-  background-image: url(Cours_Lycee/Cours_1/img/Chevrollier.jpg);
 }
 nav.nav-bar ul {
   margin: 0;
   padding: 0;
 }
 nav.nav-bar ul li {
-  list-style-type: none;
+  list-style: none;
+  display: inline-block;
 }
 .nav-bar-link {
   display: inline-block;

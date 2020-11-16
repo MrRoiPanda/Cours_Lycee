@@ -13,10 +13,5 @@ body {
   background: #E8EFB7;
 }
 a {
-  text-decoration: underline;
-  color: purple;
-}
-
-/*----------------------Table-------------------------*/
-table {
+  text-decoration: none;
 }
