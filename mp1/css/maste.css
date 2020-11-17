@@ -1,7 +1,10 @@
-*{
-
+* {
+  box-sizing: border-box;
 }
-body {
-  background: url(.../img/);
-  height: 100vh;
+html body {
+  font-family: Georgia, serif;
+  font-size: 1.2em;
+  color:white;
+  margin: 0;
+  padding: 0;
 }
