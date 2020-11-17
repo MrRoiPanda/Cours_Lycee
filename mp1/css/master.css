@@ -10,7 +10,7 @@ html body {
   padding: 0;
   text-align: center;
 }
-p, h1 {
+p, h1, h2 {
   margin: 0;
 }
 /*nav*/
@@ -71,6 +71,18 @@ nav ul li a {
   /*background-color: lightblue;*/
   padding: 5em 0;
 }
+.about-image {
+  display: inline-flex;
+}
+.about-title {
+  display: inline-flex;
+}
+.about-subtitle {
+  display: inline-flex;
+}
+.about-text {
+  display: inline-flex;
+}
 /*portfolio*/
 .portfolio {
   background-color: lightgreen;
@@ -78,8 +90,41 @@ nav ul li a {
 }
 /*contact*/
 .contact {
-  background-color: red;
   padding: 5em 0;
+  margin: 0 auto;
+  max-width: 50em;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+@supports (display: grid) {
+  @media (min-width: 50em) {
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 1em;
+      grid-template-areas:
+      "name    email"
+      "message message"
+      " .  button";
+    }
+    form .name {
+      grid-area: name;
+    }
+    form .email {
+      grid-area: email;
+    }
+    form .message {
+      grid-area: message;
+    }
+    form .message textarea {
+      height: 10em;
+    }
+    form .button {
+      grid-area: button;
+    }
+  }
 }
 /*footer*/
 footer {
