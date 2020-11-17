@@ -8,3 +8,10 @@ html body {
   margin: 0;
   padding: 0;
 }
+.copyright::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  width: 25%;
+  margin: 4em auto; }
