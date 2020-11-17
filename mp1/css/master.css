@@ -17,11 +17,15 @@ p, h1 {
 nav {
   position: absolute;
 }
-ul {
-  overflow: hidden;
-}
-li{
+nav ul li{
   text-align: left;
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  text-transform: lowercase;
+  font-weight: 500;
+  color: black;
 }
 /*Welcome*/
 .welcome {
