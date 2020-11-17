@@ -10,16 +10,19 @@ html body {
   padding: 0;
   text-align: center;
 }
-@media (min-width: 50em){
-  .welcome h1 {
-      font-size: 3vw;
-  }
-}
 p, h1 {
   margin: 0;
 }
 /*nav*/
-
+nav {
+  position: absolute;
+}
+ul {
+  overflow: hidden;
+}
+li{
+  text-align: left;
+}
 /*Welcome*/
 .welcome {
   height: 100vh;
@@ -45,8 +48,8 @@ p, h1 {
       font-size: 3vw;
   }
 }
-
 .welcome-portfolio {
+  font-size: 5.5rem;
   display: block;
   color: darkcyan;
   text-transform: uppercase;
@@ -59,10 +62,9 @@ p, h1 {
       font-size: 10vw;
   }
 }
-
 /*about*/
 .about-me {
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   padding: 5em 0;
 }
 /*portfolio*/
