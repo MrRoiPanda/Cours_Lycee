@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 html body {
-  font-family: Georgia, serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
   color:white;
   margin: 0;
@@ -14,4 +14,5 @@ html body {
   height: 1px;
   background: rgba(255, 255, 255, 0.15);
   width: 25%;
-  margin: 4em auto; }
+  margin: 4em auto;
+}
