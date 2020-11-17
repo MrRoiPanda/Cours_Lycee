@@ -7,4 +7,35 @@ html body {
   color:black;
   margin: 0;
   padding: 0;
+  text-align: center;
+}
+p, h1 {
+  margin: 0;
+}
+/*nav*/
+
+/*Welcome*/
+.welcome {
+  height: 100vh;
+  background-color: pink;
+}
+/*about*/
+.about-me {
+  height: 50vh;
+  background-color: lightblue;
+}
+/*portfolio*/
+.portfolio {
+  height: 100vh;
+  background-color: lightgreen;
+}
+/*contact*/
+.contact {
+  height: 50vh;
+  background-color: red;
+}
+/*footer*/
+footer {
+  height: 50vh;
+  background-color: lightgreen;
 }
