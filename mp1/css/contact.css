@@ -27,6 +27,7 @@ form {
     }
     form .message {
       grid-area: message;
+
     }
     form .message textarea {
       height: 10em;
@@ -35,4 +36,19 @@ form {
       grid-area: button;
     }
   }
+}
+label {
+  text-align: left;
+  display: block;
+  margin-top: 1em;
+  color: #606060;
+}
+input, textarea {
+  box-sizing: border-box;
+  display: block;
+  padding: .75em;
+  width: 100%;
+  background: #f6f6f7;
+  border: 1px solid #e8e9eb;
+  font-size: 1.2rem;
 }
