@@ -5,13 +5,18 @@
     <meta name="keywords" content="">
     <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- police de google ultra utiliser donc elle est dans le cache e tout le monde (reponse 7 jours) -->
+    <!-- C'est une police de google ultra utiliser, donc elle est dans le cache de tout le monde (petite info elle reste dans le cache pendant 7 jours) -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
     <title>John Doe Portfolio</title>
   </head>
   <body>
+  <!-- BUG:
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler">
+      <div class="hamburger"></div>
+    </div>
     <nav>
       <ul>
         <li>
@@ -28,17 +33,17 @@
         </li>
       </ul>
     </nav>
+  -->
     <div class="container-all">
       <div class="welcome" id="home">
-        <h1>
-          "welcome to my"
-          <span>Portfolio</span>
+        <h1 class="welcome-title">Welcome to my
+          <span class="welcome-portfolio">Portfolio</span>
         </h1>
       </div>
       <!-- about me -->
       <section class="about-me" id="about">
         <img class="about-img" src="" alt="">
-        <h1 class="about-title"></h1>
+        <h1 class="about-title">Qui suis-je</h1>
         <h2 class="about-subtitle" ></h2>
         <div class="about-text">
           <p>
@@ -89,14 +94,17 @@
           <input type="submit" name="" value="SEND">
         </form>
       </section>
+      <!-- Footer -->
       <footer>
         <p>follow me on social media</p>
         <div class="social-icon">
-          <img src="" alt="Twitter">
-          <img src="" alt="Instagram">
-          <img src="" alt="Youtube">
+          <a href="#"><img src="" alt="Twitter"></a>
+          <a href="https://www.instagram.com/mrpandart/"><img src="" alt="Instagram"></a>
+          <a href="#"><img src="" alt="Youtube"></a>
         </div>
-        <p class="copyright"></p>
+        <p class="copyright">
+          Copyright 2018 Joe Portfolio
+        </p>
       </footer>
     </div>
   </body>

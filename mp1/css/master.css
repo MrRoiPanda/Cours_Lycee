@@ -9,6 +9,13 @@ html body {
   padding: 0;
   text-align: center;
 }
+@media (min-width: 50em){
+  .welcome h1 {
+      font-size: 3vw;
+  }
+}
+
+
 p, h1 {
   margin: 0;
 }
@@ -17,7 +24,22 @@ p, h1 {
 /*Welcome*/
 .welcome {
   height: 100vh;
-  background-color: pink;
+  /*background-color: pink;*/
+  background: url(/Cours_Lycee/mp1/img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.welcome-title {
+  font-size: 4em;
+}
+.welcome-portfolio {
+  display: block;
 }
 /*about*/
 .about-me {
@@ -31,11 +53,11 @@ p, h1 {
 }
 /*contact*/
 .contact {
-  height: 50vh;
+  height: 25vh;
   background-color: red;
 }
 /*footer*/
 footer {
-  height: 50vh;
   background-color: lightgreen;
+  padding: 5em 0;
 }
