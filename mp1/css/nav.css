@@ -1,0 +1,14 @@
+/*nav*/
+nav {
+  position: absolute;
+}
+nav ul li{
+  text-align: left;
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  text-transform: lowercase;
+  font-weight: 500;
+  color: black;
+}

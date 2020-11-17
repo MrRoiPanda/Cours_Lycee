@@ -13,119 +13,20 @@ html body {
 p, h1, h2 {
   margin: 0;
 }
-/*nav*/
-nav {
-  position: absolute;
-}
-nav ul li{
-  text-align: left;
-  list-style: none;
-}
-nav ul li a {
-  text-decoration: none;
-  text-transform: lowercase;
-  font-weight: 500;
-  color: black;
-}
-/*Welcome*/
-.welcome {
-  height: 100vh;
-  /*background-color: pink;*/
-  background: url(/Cours_Lycee/mp1/img/header-bg.png);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.welcome-title {
-  font-size: 1.5em;
-  font-weight: 500;
-  line-height: 2;
-  color: #606060;
-}
-@media (min-width: 50em){
-  .welcome-title {
-      font-size: 3vw;
-  }
-}
-.welcome-portfolio {
-  font-size: 5.5rem;
+h1 {
+  font-size: 4rem;
   display: block;
   color: darkcyan;
-  text-transform: uppercase;
   line-height: 1;
-  font-family: "Six Caps", sans-serif;
   font-weight: 400;
 }
 @media (min-width: 50em) {
-  .welcome-portfolio {
-      font-size: 10vw;
+  h1 {
+      font-size: 4vw;
   }
 }
-/*about*/
-.about-me {
-  /*background-color: lightblue;*/
-  padding: 5em 0;
-}
-.about-image {
-  display: inline-flex;
-}
-.about-title {
-  display: inline-flex;
-}
-.about-subtitle {
-  display: inline-flex;
-}
-.about-text {
-  display: inline-flex;
-}
-/*portfolio*/
-.portfolio {
-  background-color: lightgreen;
-  padding: 5em 0;
-}
-/*contact*/
-.contact {
-  padding: 5em 0;
-  margin: 0 auto;
-  max-width: 50em;
-}
-form {
-  display: flex;
-  flex-direction: column;
-}
-@supports (display: grid) {
-  @media (min-width: 50em) {
-    form {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-column-gap: 1em;
-      grid-template-areas:
-      "name    email"
-      "message message"
-      " .  button";
-    }
-    form .name {
-      grid-area: name;
-    }
-    form .email {
-      grid-area: email;
-    }
-    form .message {
-      grid-area: message;
-    }
-    form .message textarea {
-      height: 10em;
-    }
-    form .button {
-      grid-area: button;
-    }
-  }
-}
+
+
 /*footer*/
 footer {
   background-color: lightgreen;

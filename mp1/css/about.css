@@ -1,0 +1,22 @@
+/*about*/
+.about-me {
+  /*background-color: lightblue;*/
+  padding: 5em 0;
+}
+.about-image {
+  display: inline-flex;
+}
+.about-title {
+  display: inline-flex;
+}
+.about-subtitle {
+  display: inline-flex;
+}
+.about-text {
+  display: inline-flex;
+}
+/*portfolio*/
+.portfolio {
+  background-color: lightgreen;
+  padding: 5em 0;
+}

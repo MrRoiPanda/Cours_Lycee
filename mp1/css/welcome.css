@@ -1,0 +1,39 @@
+/*Welcome*/
+.welcome {
+  height: 100vh;
+  /*background-color: pink;*/
+  background: url(/Cours_Lycee/mp1/img/header-bg.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.welcome-title {
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 2;
+  color: #606060;
+}
+@media (min-width: 50em){
+  .welcome-title {
+      font-size: 3vw;
+  }
+}
+.welcome-portfolio {
+  font-size: 5.5rem;
+  display: block;
+  color: darkcyan;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Six Caps", sans-serif;
+  font-weight: 400;
+}
+@media (min-width: 50em) {
+  .welcome-portfolio {
+      font-size: 10vw;
+  }
+}
