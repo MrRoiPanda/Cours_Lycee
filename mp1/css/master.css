@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 html body {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
@@ -10,6 +13,25 @@ html body {
   padding: 0;
   text-align: center;
 }
+/* Scroller*/
+/*Chrome/Edge/Safari*/
+html::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+html::-webkit-scrollbar-track {
+  background-color: #60606060;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: darkcyan;    /* color of the scroll thumb */
+
+}
+/*firefox-only*/
+html {
+  scrollbar-width: thin;          /* "auto" or "thin"  */
+  /* La première cible le curseur et la seconde la piste */
+  scrollbar-color: darkcyan #60606060;   /* scroll thumb & track */
+}
+/*----------------------------------------*/
 h1, h2, p {
   margin: 0;
   margin-bottom: 1em;

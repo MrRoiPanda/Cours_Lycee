@@ -1,6 +1,9 @@
 /*nav*/
 nav {
-  position: absolute;
+  position: fixed;
+  transform: translate3d(0, -50%, 0);
+  top: 50%;
+  z-index: 2;
 }
 nav ul li{
   text-align: left;
@@ -11,4 +14,7 @@ nav ul li a {
   text-transform: lowercase;
   font-weight: 500;
   color: black;
+}
+nav ul li a:visited {
+  font-weight: 600;
 }
