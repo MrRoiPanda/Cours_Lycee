@@ -31,3 +31,13 @@ footer {
   background-color: lightgreen;
   padding: 5em 0;
 }
+.social-icons a img {
+  padding: 5em 0;
+}
+.social-icon {
+    width: 25%;
+    height: 25%;
+}
+.copyright p::before {
+  content: "\0000A9";
+}
