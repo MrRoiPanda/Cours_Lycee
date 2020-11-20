@@ -57,14 +57,11 @@ input, textarea {
     width: auto;
     margin-top: 1em;
     margin-left: auto;
-    background: #03afc2;
+    background: #223843;
     border: none;
-    font-size: 2rem;
-    letter-spacing: 0.15em;
+    font-size: 1.5rem;
     color: #ffffff;
     text-transform: uppercase;
     line-height: 1;
-    font-family: "Six Caps", sans-serif;
-    font-weight: 400;
     padding: .5em 1.5em;
 }
