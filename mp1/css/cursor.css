@@ -1,18 +1,24 @@
-.cursor {
-    width: 40px;
-    height: 40px;
-    border: 1px dashed white;
-    border-radius: 50%;
-    position: absolute;
-}
-.cursor::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 5px;
-    height: 5px;
-    background: crimson;
-    border-radius: 50%;
+
+@media (min-width: 800px) {
+  .cursor {
+      width: 100px;
+      height: 100px;
+      border: 1px white;
+      background: grey;
+      border-radius: 50%;
+      position: absolute;
+  }
+  /*petit point au milieu*/
+  /*
+  .cursor::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+  }*/
 }

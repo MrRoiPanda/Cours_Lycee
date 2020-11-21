@@ -1,5 +1,6 @@
 /*nav*/
 nav {
+  cursor: none;
   position: fixed;
   transform: translate3d(0, -50%, 0);
   top: 50%;

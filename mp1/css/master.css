@@ -1,5 +1,9 @@
 * {
   box-sizing: border-box;
+  cursor: none;
+}
+a {
+  cursor: none;
 }
 html {
   scroll-behavior: smooth;
