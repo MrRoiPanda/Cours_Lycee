@@ -32,6 +32,10 @@ html {
   scrollbar-color: darkcyan #60606060;   /* scroll thumb & track */
 }
 /*----------------------------------------*/
+body {
+  height: 100vh;
+	cursor: none;
+}
 h1, h2, p {
   margin: 0;
   margin-bottom: 1em;
