@@ -38,6 +38,7 @@ html {
 body {
 	cursor: none;
   display: flex;
+  overflow: hidden;
 }
 h1, h2, p {
   margin: 0;
