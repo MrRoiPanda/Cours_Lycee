@@ -11,8 +11,8 @@ html {
 html body {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
-  background: #fff;
-  color:black;
+  background: black;
+  color:white;
   margin: 0;
   padding: 0;
   text-align: center;
