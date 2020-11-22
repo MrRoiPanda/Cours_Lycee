@@ -27,7 +27,6 @@ html::-webkit-scrollbar-track {
 }
 html::-webkit-scrollbar-thumb {
   background-color: darkcyan;    /* color of the scroll thumb */
-
 }
 /*firefox-only*/
 html {
@@ -37,8 +36,8 @@ html {
 }
 /*----------------------------------------*/
 body {
-  height: 100vh;
 	cursor: none;
+  display: flex;
 }
 h1, h2, p {
   margin: 0;

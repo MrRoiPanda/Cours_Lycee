@@ -1,12 +1,16 @@
 
 @media (min-width: 800px) {
   .cursor {
-      width: 100px;
-      height: 100px;
-      border: 1px white;
-      background: grey;
-      border-radius: 50%;
-      position: absolute;
+    background: grey;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px white;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
   }
   /*petit point au milieu*/
   /*
