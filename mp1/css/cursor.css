@@ -1,7 +1,7 @@
 
 @media (min-width: 800px) {
   .cursor {
-    background: white;
+    background: purple;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -10,6 +10,7 @@
     position: absolute;
     top: 0;
     left: 0;
+        /*  effet fun*/
     /*mix-blend-mode: difference;*/
   }
   /*petit point au milieu*/
