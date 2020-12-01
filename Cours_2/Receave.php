@@ -1,8 +1,21 @@
 <?php
   $correct = 1;
-  if (1 < $_POST['Age'] < 130 ) {
+  if ($_POST['Age'] > 130 ) {
     $correct = 0;
   }
+  if ($_POST['Age'] < 1 ) {
+    $correct = 0;
+  }
+  if (empty($_POST["FirstName"])) {
+    $correct = 0;
+  }
+  if (empty($_POST['SecoundName'])) {
+    $correct = 0;
+  }
+  if (empty($_POST['Classe'])) {
+    $correct = 0;
+  }
+
 
   if ($correct == 0) {
     header('Location:ex4.php');
@@ -17,9 +30,8 @@
   </head>
   <body>
     <p>hello !</p>
-
     <p>You are : <?php echo $_POST['SecoundName']." ".$_POST["FirstName"] ?></p>
-    <p>Your age : <?php $_POST['Age']?> et vous etes un etudiant</p>
-    <p><a href="#">clik here</a>for change data</p>
+    <p>Your age : <?php $_POST['Age']." "?>you are in <?php $_POST['Classe'] ?></p>
+    <p><a href="index.php">Clik here</a> for change data</p>
   </body>
 </html>
