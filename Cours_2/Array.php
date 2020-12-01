@@ -6,15 +6,17 @@
    </head>
    <body>
      <?php
-     $prenoms = array('Maria', 'Daisuke', 'Paul');
+     $prenoms = array('Maria', 'Daisuke', 'Paul' , 'Nathan');
      //$prenoms[0] = 'Maria';
      //$prenoms[1] = 'Daisuke';
      //$prenoms[2] = 'Paul';
+     $tab = count($prenoms);
 
-     $age = array('Maria' => 24, 'Daisuke' => 22, 'Paul' => 'non renseigne');
+     $age = array('Maria' => 24, 'Daisuke' => 22, 'Paul' => 'non renseigne' ,'Nathan' => '20');
 
-     echo $prenoms[0]."<br>";
-     echo $age["Paul"]."<br>";
+     for ($i=0; $i < $tab ; $i++) {
+       echo $prenoms[$i]." ".$age[$prenoms[$i]]."<br>";
+     }
      ?>
 
    </body>
