@@ -16,6 +16,6 @@
       $_SESSION['visite']++;
       echo "vous avez visité cete page ".$_SESSION['visite']." fois";
     }
-    ?>    
+    ?>
   </body>
 </html>
