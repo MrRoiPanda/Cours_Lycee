@@ -14,6 +14,7 @@
 
      $age = array('Maria' => 24, 'Daisuke' => 22, 'Paul' => 'non renseigne' ,'Nathan' => '20');
 
+
      for ($i=0; $i < $tab ; $i++) {
        echo $prenoms[$i]." ".$age[$prenoms[$i]]."<br>";
      }
