@@ -9,39 +9,49 @@
 //CSV ( pour Comma Separated Values ) qu'on pourrait traduire par
 // "Valeurs séparées par des virgules" est un format de données
 // où les valeurs sont comme son nom l'indique séparées par des virgules.
-// les lignes du tableau
-$lignes[] = array('n_x_Te' , 'Vmesuree');
-$lignes[] = array(0 , 0 );
-$lignes[] = array(1 , 1.75);
-$lignes[] = array(2 , 3.25);
-$lignes[] = array(3 , 5);
-$lignes[] = array(4 , 5);
-$lignes[] = array(5 , 5);
-$lignes[] = array(6 , 5);
-$lignes[] = array(7 , 2);
-$lignes[] = array(8 , 2);
-$lignes[] = array(9 , 2);
-$lignes[] = array(10 , 2);
+// les lignes du tableau De la tension
+$Vm[] = array('n_x_Te' , 'Vmesuree');
+$Vm[] = array(0 , 0 );
+$Vm[] = array(1 , 1.75);
+$Vm[] = array(2 , 3.25);
+$Vm[] = array(3 , 5);
+$Vm[] = array(4 , 5);
+$Vm[] = array(5 , 5);
+$Vm[] = array(6 , 5);
+$Vm[] = array(7 , 2);
+$Vm[] = array(8 , 2);
+$Vm[] = array(9 , 2);
+$Vm[] = array(10 , 2);
 
-// Paramétrage de l'écriture du futur fichier CSV
+
+// les lignes du tableau De la tension
+$Ic[] = array('n_x_Te' , 'ICalculer');
+
+for ($i=1; $i < 12 ; $i++) {
+  $Ic = array($Vm[$i][0] , $Vm[$i][1] /1000 );
+}
+
+foreach ($Ic as $value) {
+  print_r($value)."<br>";
+}
+
+$delimiteur = "\t";
+
 $chemin ='releve_tension.csv';
-$delimiteur = "\t"; // Pour une tabulation, utiliser $delimiteur = "\t";
-// Création du fichier csv (le fichier est vide pour le moment)
 $releve_tension = fopen($chemin, 'w');
-// Si le fichier a vocation a être importé dans Excel,
-// On doit  impérativement utiliser la ligne ci-dessous pour corriger
-// les problèmes d'affichage des caractères internationaux (les accents par exemple)
-// fprintf($releve_tension, chr(0xEF).chr(0xBB).chr(0xBF));
-
-// Boucle foreach sur chaque ligne du tableau
-foreach($lignes as $ligne)
+foreach($Vm as $ligne)
 	{
-		// chaque ligne en cours de lecture est insérée dans le fichier
-		// les valeurs présentes dans chaque ligne seront séparées par $delimiteur
 		fputcsv($releve_tension, $ligne, $delimiteur);
 	}
-	// fermeture du fichier csv
 fclose($releve_tension);
+
+$chemin ='calcule_intensiter.csv';
+$calcule_intensiter = fopen($chemin, 'w');
+foreach($Ic as $ligne)
+	{
+		fputcsv($calcule_intensiter, $ligne, $delimiteur);
+	}
+fclose($calcule_intensiter);
 ?>
 </body>
 </html>
