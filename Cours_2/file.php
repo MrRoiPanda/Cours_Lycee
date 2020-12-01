@@ -13,7 +13,7 @@
 
 
       $chemin = 'File_Save/fichier.csv';                    //adressage relatif
-      $delimiteur = ',';                                    //Pour une tabulation, utiliser $delimiteur = "\t"
+      $delimiteur = "\t";                                    //Pour une tabulation, utiliser $delimiteur = "\t"
       $fichier_csv = fopen($chemin, 'w+');                  //Création du fichier csv, w+ : en lecture/écriture
 
 
