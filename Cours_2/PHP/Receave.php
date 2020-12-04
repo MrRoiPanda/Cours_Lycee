@@ -18,7 +18,7 @@
 
 
   if ($correct == 0) {
-    header('Location:ex4.php');
+    header('Location:index.php');
   }
 ?>
 <!DOCTYPE html>
