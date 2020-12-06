@@ -32,15 +32,5 @@
       echo "Marque tout sinon je te fait attendre è-é !!!!";
     }
     ?>
-
-    <?php
-    $x = 1248;
-    if ($x%3==0 AND $x%5==0) {
-      echo "ok";
-    }
-    else {
-      echo "no";
-    }
-    ?>
   </body>
 </html>
