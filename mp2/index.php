@@ -9,7 +9,6 @@
     session_start();
     if (!isset($_SESSION['visite'])) {
       $_SESSION['visite'] = 1;
-      setcookie("dice",0);
     }
     else {
       $_SESSION['visite'] = 2;
@@ -23,9 +22,13 @@
       </form>
       <?php
         if ($_SESSION['visite'] == 2) {
-          echo $_COOKIE["dice"];
-          echo "<br>";
-          echo $_COOKIE["nb"];
+          if (!empty($_COOKIE["dice"])) {
+            echo $_COOKIE["dice"];
+            echo "<br>";
+          }
+          if (!empty($_COOKIE["nb"])) {
+            echo $_COOKIE["nb"];
+          }
         }
       ?>
     </div>
