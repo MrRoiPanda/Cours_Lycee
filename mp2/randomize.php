@@ -2,7 +2,7 @@
 /// Start
 
 /// Aléa [0 - 9]
-$d10 = rand ( 0 , 9);
+$d10 = rand (0 , 9);
 
 /// Dice value in cookie
 setcookie("dice",$d10);

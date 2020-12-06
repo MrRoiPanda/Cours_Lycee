@@ -4,21 +4,26 @@
   margin: 0;
 }
 body {
+
+}
+.content {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
   background-color: #163264;
 }
-.content {
-  
+@media (min-width: 50em) {
+
 }
 form {
-
+  width: 75%;
 }
 #number {
-
+  width: 100%;
+  background: red ;
+  color: black;
 }
+
 #button {
 
 }
