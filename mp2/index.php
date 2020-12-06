@@ -11,6 +11,9 @@
       $_SESSION['visite'] = 1;
       setcookie("dice",0);
     }
+    else {
+      $_SESSION['visite'] = 2;
+    }
   ?>
   <body>
     <div class="content">
@@ -18,6 +21,13 @@
         <input id="number" type="number" name="number" value="" placeholder="0 à 9" required min="0" max="9" step="1">
         <input id="button" type="submit" name="roll" value="roll">
       </form>
+      <?php
+        if ($_SESSION['visite'] == 2) {
+          echo $_COOKIE["dice"];
+          echo "<br>";
+          echo $_COOKIE["nb"];
+        }
+      ?>
     </div>
   </body>
 </html>
