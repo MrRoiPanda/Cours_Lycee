@@ -1,23 +1,75 @@
+/*
+Pourquoi tout faire en flexbox ? :
+- le site web est deja responsive
+- On a moins a ecrir
+
+Astuce :
+  Codder son site en le regarden en format téléphone
+  J'utilise le format Iphone6/7/8
+
+Apprendre les flexboxs : https://flexboxfroggy.com/#fr
+*/
+
 * {
   box-sizing: border-box;
   border: 0;
   margin: 0;
 }
-body {
 
+body {
+  color: #FFF;
 }
+
+h1 {
+  font-size: 5rem;
+}
+
+h2{
+  font-size: 5rem;
+}
+p {
+  font-size: 1.7rem;
+}
+
 .content {
   display: flex;
-  justify-content: center;
+  flex-flow: column;
+  align-items: center;
   height: 100vh;
   background-color: #163264;
+}
+
+.instructions {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 0;
+}
+
+.visual {
+  padding: 5% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+}
+.visual h2 {
+  padding: 0 10px;
+}
+
+.input {
+  padding: 5% 0;
+  width: 50%;
+}
+.icon {
+  height: 20vh;
 }
 @media (min-width: 50em) {
 
 }
-form {
-  width: 75%;
-}
+
 #number {
   width: 100%;
   background: red ;
