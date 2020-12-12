@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="FR-fr" dir="ltr">
   <head>
@@ -21,7 +24,21 @@
             }
           ?>
         </h2>
-        <img class="icon" src="img/d10.svg" alt="">
+        <?php
+          if (!isset($_COOKIE["nb"]) && !isset($_COOKIE["dice"])) {
+            echo "<img class=\"icon\" src=\"img/d10.svg\">";
+          }
+          if (isset($_COOKIE["dice"]) && isset($_COOKIE["nb"])) {
+
+            if($_COOKIE["nb"] == $_COOKIE["dice"]){
+              echo "<img class=\"icon\" src=\"img/win.svg\">";
+            }
+            else {
+              echo "<img class=\"icon\" src=\"img/lose.svg\">";
+            }
+          }
+
+        ?>
         <h2>
           <?php
             if (isset($_COOKIE["dice"])) {
@@ -33,7 +50,7 @@
       <div class="input">
         <form class="" action="randomize.php" method="post">
           <input id="number" type="number" name="number" value="" placeholder="0 à 9" required min="0" max="9" step="1">
-          <input id="button" type="submit" name="roll" value="roll">
+          <input id="button" type="submit" name="roll" value="Roll">
         </form>
       </div>
     </div>
