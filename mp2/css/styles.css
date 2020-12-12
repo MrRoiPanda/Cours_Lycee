@@ -56,33 +56,14 @@ p {
   background-color: #163264;
 }
 
-.instructions {
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5vw 0;
-}
-
 .visual {
-  padding: 5vw 0;
-  align-self: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-flow: row;
+  align-items: center;
 }
 
 .visual h2 {
   padding: 0 10px;
-}
-
-.input {
-  padding: 5vw 0;
-  width: 50%;
-  display: flex;
-  justify-content: center;
 }
 
 .input form {
