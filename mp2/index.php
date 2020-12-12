@@ -1,5 +1,5 @@
 <?php
-
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="FR-fr" dir="ltr">
@@ -19,18 +19,18 @@
       <div class="visual">
         <h2>
           <?php
-            if (isset($_COOKIE["nb"])) {
-              echo $_COOKIE["nb"];
+            if (isset($_SESSION["nb"])) {
+              echo $_SESSION["nb"];
             }
           ?>
         </h2>
         <?php
-          if (!isset($_COOKIE["nb"]) && !isset($_COOKIE["dice"])) {
+          if (!isset($_SESSION["nb"]) && !isset($_SESSION["dice"])) {
             echo "<img class=\"icon\" src=\"img/d10.svg\">";
           }
-          if (isset($_COOKIE["dice"]) && isset($_COOKIE["nb"])) {
+          if (isset($_SESSION["dice"]) && isset($_SESSION["nb"])) {
 
-            if($_COOKIE["nb"] == $_COOKIE["dice"]){
+            if($_SESSION["nb"] == $_SESSION["dice"]){
               echo "<img class=\"icon\" src=\"img/win.svg\">";
             }
             else {
@@ -41,8 +41,8 @@
         ?>
         <h2>
           <?php
-            if (isset($_COOKIE["dice"])) {
-              echo $_COOKIE["dice"];
+            if (isset($_SESSION["dice"])) {
+              echo $_SESSION["dice"];
             }
           ?>
         </h2>
