@@ -10,8 +10,10 @@
     <div class="content">
       <div class="instructions">
         <h1>Roll the Dice</h1>
-        <p>vdgdf</p>
-        <p>dfgdgd</p>
+        <br>
+        <p>Essayez de trouver la valeur du D10</p>
+        <br>
+        <p></p>
       </div>
       <div class="visual">
         <h2>
