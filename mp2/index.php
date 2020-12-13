@@ -13,8 +13,7 @@
     <div class="content">
       <div class="instructions">
         <h1>Roll the Dice</h1>
-        <p>Essayez de trouver la valeur du D10</p>
-        <p></p>
+        <p>Essayez de trouver la meme valeur que l'autre joueur</p>
       </div>
       <div class="visual">
         <h2>
@@ -49,10 +48,13 @@
       </div>
       <div class="input">
         <form class="" action="randomize.php" method="post">
-          <input id="number" type="number" name="number" value="" placeholder="0 à 9" required min="0" max="9" step="1">
+          <input id="number" type="number" name="number" value="" placeholder="0 à 10" required min="0" max="10" step="1">
           <input id="button" type="submit" name="roll" value="Roll">
         </form>
       </div>
     </div>
   </body>
 </html>
+<?php
+  session_destroy();
+?>

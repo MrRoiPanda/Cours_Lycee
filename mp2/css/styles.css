@@ -19,10 +19,12 @@ Apprendre les flexboxs : https://flexboxfroggy.com/#fr
 body {
   color: #FFF;
   height: 100vh;
+  text-align: center;
 }
 
 h1 {
   font-size: 8rem;
+
 }
 
 h2{
@@ -42,6 +44,10 @@ p {
   background-color: #163264;
 }
 
+.instruction {
+  display: flex;
+  justify-content: center;
+}
 .visual {
   display: flex;
   flex-flow: row;
@@ -79,6 +85,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   font-size: 7rem;
   background: red ;
   color: black;
+  text-align:center;
 }
 
 #button {
