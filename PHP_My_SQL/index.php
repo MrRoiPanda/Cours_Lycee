@@ -11,7 +11,7 @@
       $pass = "";
 
       try {
-        $connection = new PDO("mysql:host=$server;dbname=cinematheque1" , $login, $pass);
+        $connection = new PDO("mysql:host=$server;port=3308;dbname=cinematheque1" , $login, $pass);
         $connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Connection a la base de donne Réussie"."<br>";
         /// 2.2
@@ -27,8 +27,8 @@
         $request->execute();
         while($result = $request->fetch()){
           ///print_r($result);
-          echo "Liste des films"."<br>";
-          echo "$result["acteurs_principaux"]";
+          echo "Liste des acteurs"."<br>";
+          echo $result["acteurs_principaux"];
         }
       } catch (PDOException $e) {
         echo "Echec de la connection : ".$e->getMessage();
