@@ -23,7 +23,7 @@
         //  echo "Film N°".$result["ID"]." ".$result["title"]." avec".$result["acteurs_principaux"]." paru en".$result["anee"]." a pour etat :".$result["etat"]."<br>";
         //}
         /// 3.1
-        $request = $connection->prepare("SELECT acteurs_principaux * FROM films_tim_burton");
+        $request = $connection->prepare("SELECT acteurs_principaux FROM films_tim_burton");
         $request->execute();
         while($result = $request->fetch()){
           ///print_r($result);
