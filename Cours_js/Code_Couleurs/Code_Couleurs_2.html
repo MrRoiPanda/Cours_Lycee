@@ -1,0 +1,85 @@
+<script type="text/javascript"> 
+											//Déclaration des variables globales
+	var N_RESISTANCE = 1;					//Variable contenant le Numéro de la résistance présentée
+	var N_BONNES_REPONSES = 0; 				//Variable contenant le Nombre de bonnes réponses 
+	var VALEUR = new Array();				//Variable contenant la valeur complète des résistances
+
+function NOUVELLE_RESISTANCE()		//Fonction présentant une nouvelle résistance dans le tableau 
+ {
+	var SERIE_E12 = new Array (10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82);		//Lite de la série E12
+	var DEUX_CHIFFRES;																//Variable contenant les 2 chiffres significatifs d'une résistance
+	var MULTIPLICATEUR;																//Variable contenant le multiplicateur (3ème chiffre)
+	var DIZAINE;																	//Variable contenant le premier chiffre significatif d'une résistance
+	var UNITE;																		//Variable contenant le second chiffre significatif d'une résistance
+ 	DEUX_CHIFFRES = SERIE_E12[Math.floor (Math.random() * 11.99)];					//Choix aléatoire d'une résistance (entre 0 et 11)			
+	MULTIPLICATEUR = Math.floor (Math.random() * 7.99);								//Choix aléatoire d'un multiplicateur (entre 0 et 7)	
+    UNITE = DEUX_CHIFFRES % 10;														//Extraction de la valeur des unités
+    DIZAINE = Math.trunc(DEUX_CHIFFRES / 10);										//Extraction de la valeur des dizaines
+    VALEUR[N_RESISTANCE] = (DIZAINE * 10 + UNITE) * Math.pow(10, MULTIPLICATEUR);	//Calcul de la valeur complète de la résistance présentée
+    VALEUR[N_RESISTANCE] = VALEUR[N_RESISTANCE] / 100; 								// "                      "               "
+		
+	document.write(																	//Ecrit le contenu HTML de la cellule (de gauche)
+		'<img src="images/fond'+N_RESISTANCE+'.gif" width="50" height="50"/>'+		//Affiche le numéro de la résistance sous forme d'image
+		'<img src="images/ch1_'+DIZAINE+'.jpg" width="38" height="50"/>'+			//Affiche la première couleur de la résistance
+		'<img src="images/ch2_'+UNITE+'.jpg" width="17" height="50"/>'+				//Affiche la seconde couleur de la résistance
+		'<img src="images/ch3_'+(MULTIPLICATEUR - 2)+'.jpg" width="15" height="50"/>'+	//Affiche la troisième couleur de la résistance
+		'<img src="images/tol_5.jpg" width="60" height="50"/>');						//Affiche la quatrième couleur de la résistance
+ }									//Fin de la fonction présentant une nouvelle résistance dans le tableau			
+</script>								
+
+
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset = "utf-8">
+  <meta http-equiv=content-Type" content="text/html">
+  <title>
+   - BTS Systèmes Numériques - Code des couleurs -
+  </title>
+ </head>
+ <body bgcolor="#F7F7E7">
+  <table id="ID_TABLEAU" align="center" width="600" border="1">
+   <tr>
+    <td align="center" colspan="2" width="400">
+	   <font color="#FF0000" size="5" face="arial">
+	    <b>
+	      <br>- Questionnaire sur le code des couleurs -<br/>- Série E12 -<br/><br/>
+	    </b>
+	   </font>
+	  </td>
+   </tr>
+   <tr>
+    <td align="center" width="350">
+		 <script type="text/javascript"> 
+		  NOUVELLE_RESISTANCE();
+		 </script> 
+	  </td>
+    <td align="center" valign="middle" width="250">
+	   <table align="center">
+	    <tr>
+	     <td align="center" width="150">
+		    <input type="text" id="REPONSE" size="10" value="" placeholder="Valeur Ohmique"/> &#937
+	     </td>
+	     <td align="center" width="100">							
+		    <input type="submit" value="Vérifier" width="50"/>
+	     </td>
+	    </tr>
+	   </table>	 
+	  </td>
+   </tr>	 
+   <tr>
+    <td align="center">
+     <img src="images/result.gif" width="162" height="50"/>
+	   <img src="images/fond1.gif" width="40" height="50"/>
+	   <img src="images/sur.gif" width="40" height="50"/>
+	   <img src="images/fond10.gif" width="40" height="50"/>
+	  </td>
+	  <td align="center">	   
+	   <a href="code_couleurs.html">
+	    <input type="submit" value="Recomencer" width="50"/>
+	   </a>
+	  </td>
+   </tr>
+  </table>
+ </body>
+</html> 

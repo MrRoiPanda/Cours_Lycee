@@ -1,0 +1,146 @@
+<script type="text/javascript"> 
+											//Déclaration des variables globales
+	var N_RESISTANCE = 1;					//Variable contenant le Numéro de la résistance présentée
+	var N_BONNES_REPONSES = 0; 				//Variable contenant le Nombre de bonnes réponses 
+	var VALEUR = new Array();				//Variable contenant la valeur complète des résistances
+
+function NOUVELLE_RESISTANCE()		//Fonction présentant une nouvelle résistance dans le tableau 
+ {
+	var SERIE_E12 = new Array (10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82);		//Lite de la série E12
+	var DEUX_CHIFFRES;																//Variable contenant les 2 chiffres significatifs d'une résistance
+	var MULTIPLICATEUR;																//Variable contenant le multiplicateur (3ème chiffre)
+	var DIZAINE;																	//Variable contenant le premier chiffre significatif d'une résistance
+	var UNITE;																		//Variable contenant le second chiffre significatif d'une résistance
+ 	DEUX_CHIFFRES = SERIE_E12[Math.floor (Math.random() * 11.99)];					//Choix aléatoire d'une résistance (entre 0 et 11)			
+	MULTIPLICATEUR = Math.floor (Math.random() * 7.99);								//Choix aléatoire d'un multiplicateur (entre 0 et 7)	
+    UNITE = DEUX_CHIFFRES % 10;														//Extraction de la valeur des unités
+    DIZAINE = Math.trunc(DEUX_CHIFFRES / 10);										//Extraction de la valeur des dizaines
+    VALEUR[N_RESISTANCE] = (DIZAINE * 10 + UNITE) * Math.pow(10, MULTIPLICATEUR);	//Calcul de la valeur complète de la résistance présentée
+    VALEUR[N_RESISTANCE] = VALEUR[N_RESISTANCE] / 100; 								// "                      "               "
+		
+	document.write(																	//Ecrit le contenu HTML de la cellule (de gauche)
+		'<img src="images/fond'+N_RESISTANCE+'.gif" width="50" height="50"/>'+		//Affiche le numéro de la résistance sous forme d'image
+		'<img src="images/ch1_'+DIZAINE+'.jpg" width="38" height="50"/>'+			//Affiche la première couleur de la résistance
+		'<img src="images/ch2_'+UNITE+'.jpg" width="17" height="50"/>'+				//Affiche la seconde couleur de la résistance
+		'<img src="images/ch3_'+(MULTIPLICATEUR - 2)+'.jpg" width="15" height="50"/>'+	//Affiche la troisième couleur de la résistance
+		'<img src="images/tol_5.jpg" width="60" height="50"/>');						//Affiche la quatrième couleur de la résistance
+ }									//Fin de la foncion présentant une nouvelle résistance dans le tableau			
+ 
+ function VERIFICATION()				//Fonction de vérification des réponses et d'appel de le suite à donner
+ {
+	var PROPOSITION;														//Variable contenant la réponse décodée 
+	var RESULTAT_SRC;														//Variable contenant l'URL de l'image BON ou FAUX
+	//PROPOSITION = document.getElementById("REPONSE").value;					//Récupère la valeur de l'élément <input id="REPONSE">
+	PROPOSITION = DECODAGE_REPONSE();
+	if(Math.abs(PROPOSITION - VALEUR[N_RESISTANCE]) < 0.001)				//Vérifie si le réponse est correcte
+	 {																		//Si réponse correcte
+		N_BONNES_REPONSES++;												//Incrémente le nombre de bonnes réponses
+		RESULTAT_SRC = "images/bon.jpg";									//Prépare l'affichage du OK
+	 }
+	else																	//Si réponse incorrecte
+	 {
+		RESULTAT_SRC = "images/faux.jpg";									//Prépare l'affichage du KO
+	 }
+ 	document.write(															//Ecrit le contenu HTML de la  nouvelle cellule (de droite)
+		'<table align="center"><tr><td align="center" width="150">'+		//Défini un tableau et sa taille pour bien centrer les 2 éléments
+		PROPOSITION+' &#937'+	 											//Affiche la valeur de la réponse
+		'</td><td align="center" width="100">'+								//Suite du tableau
+		'<img border="0" src="'+RESULTAT_SRC+'" width="40" height="50"/>'+	//Affiche l'image correpondant à la qualité de la réponse
+		'</td></tr></table>');												//Fin du tableau
+ }									//Fin de la fonction de vérification des réponses et d'appel de le suite à donner  
+	
+function DECODAGE_REPONSE()			//Fonction de conversion d'une chaine de caractères en un nombre à virgule flotante 
+ {									//en prennant en compte le point, la virgule, le m le k ou K le M le G	
+	var CHAINE = new Array();												//Chaine de caractères à analyser
+	var CHAINE_DECODEE = new Array();										//Chaine de caracteres décodée 
+	var LONGUEUR;															//Longueur de la haine de caractères à analyser
+	var PUISSANCE = 0;														//Valeur de la puissance (fonctgion de m, k ,K, M). Par défaut à 0
+	var NOMBRE = 0;															//Nombre flottant résultant de l'analyse. Par défaut à 0
+	CHAINE_DECODEE = CHAINE_DECODEE + 0;
+	CHAINE = document.getElementById("REPONSE").value;						//Récupération de la chaine à analyser qui est dans le <input>
+	LONGUEUR = CHAINE.length;												//Calcul de sa longueur
+	for (N_CARACTERE = 0; N_CARACTERE < LONGUEUR; N_CARACTERE++)			//Boucle de balayage de tous les caractères de la chaine à analyser 
+	 {
+		if (! isNaN(CHAINE[N_CARACTERE]))									//Si c'est un chiffre
+			CHAINE_DECODEE = CHAINE_DECODEE + CHAINE[N_CARACTERE];			//Ajoute celui-ci à la chaine décodée
+		if ((CHAINE[N_CARACTERE] == '.') || (CHAINE[N_CARACTERE] == ','))	//Si c'est un point ou une virgule 
+			CHAINE_DECODEE = CHAINE_DECODEE + '.';							//ajoute un point à la chaine décodée 
+		if (CHAINE[N_CARACTERE] == 'm')										//Si c'est un m (milli)
+		 {
+			CHAINE_DECODEE = CHAINE_DECODEE  + '.';							//ajoute un point à la chaine décodée
+			PUISSANCE = -3;													//Mémorise la puissance de 10. Ici -3
+     }			
+		if ((CHAINE[N_CARACTERE] == 'k') || (CHAINE[N_CARACTERE] == 'K'))	//Si c'est un k ou un K (kilo)
+		 {
+			CHAINE_DECODEE = CHAINE_DECODEE  + '.';							//ajoute un point à la chaine décodée
+			PUISSANCE = 3;													//Mémorise la puissance de 10. Ici 3
+     }		
+		if (CHAINE[N_CARACTERE] == 'M')										//Si c'est un M (Méga)
+		 {
+			CHAINE_DECODEE = CHAINE_DECODEE  + '.';							//ajoute un point à la chaine décodée
+			PUISSANCE = 6;													//Mémorise la puissance de 10. Ici 6
+     }	
+	 }																		//Fin de la boucle de balayage de tous les caractères de la chaine à analyser 
+	NOMBRE = parseFloat(CHAINE_DECODEE);									//Converti la chaine décodé en un nombre à virgule flottante
+	NOMBRE = NOMBRE * Math.pow(10, PUISSANCE);								//Applique le cofficient multiplicateur (puissance de 10)
+	return NOMBRE;															//Retourne le résultat si conversion possible ou 0 si impossible
+ } 									//Fin de la fonction de conversion d'une chaine de caractères en un nombre à virgule flotante 
+	
+</script>								
+
+
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset = "utf-8">
+  <meta http-equiv=content-Type" content="text/html">
+  <title>
+   - BTS Systèmes Numériques - Code des couleurs -
+  </title>
+ </head>
+ <body bgcolor="#F7F7E7">
+  <table id="ID_TABLEAU" align="center" width="600" border="1">
+   <tr>
+    <td align="center" colspan="2" width="400">
+	   <font color="#FF0000" size="5" face="arial">
+	    <b>
+	      <br>- Questionnaire sur le code des couleurs -<br/>- Série E12 -<br/><br/>
+	    </b>
+	   </font>
+	  </td>
+   </tr>
+   <tr>
+    <td align="center" width="350">
+		 <script type="text/javascript"> 
+		  NOUVELLE_RESISTANCE();
+		 </script> 
+	  </td>
+    <td align="center" valign="middle" width="250">
+	   <table align="center">
+	    <tr>
+	     <td align="center" width="150">
+		    <input type="text" id="REPONSE" size="10" value="" placeholder="Valeur Ohmique"/> &#937
+	     </td>
+	     <td align="center" width="100">							
+		    <input type="submit" value="Vérifier" width="50" onclick="VERIFICATION()"/>
+	     </td>
+	    </tr>
+	   </table>	 
+	  </td>
+   </tr>	 
+   <tr>
+    <td align="center">
+     <img src="images/result.gif" width="162" height="50"/>
+	   <img src="images/fond1.gif" width="40" height="50"/>
+	   <img src="images/sur.gif" width="40" height="50"/>
+	   <img src="images/fond10.gif" width="40" height="50"/>
+	  </td>
+	  <td align="center">	   
+	   <a href="code_couleurs.html">
+	    <input type="submit" value="Recomencer" width="50"/>
+	   </a>
+	  </td>
+   </tr>
+  </table>
+ </body>
+</html> 
