@@ -20,7 +20,7 @@
         while($result = $request->fetch()){
           ///print_r($result);
           echo "Liste des films"."<br>";
-          echo "Film N°".$result["ID"]." ".$result["title"]." avec".$result["acteurs_principaux"];
+          echo "Film N°".$result["ID"]." ".$result["title"]." avec".$result["acteurs_principaux"]." paru en".$result["anee"]." a pour etat :".$result["etat"]."<br>";
         }
 
       } catch (PDOException $e) {
