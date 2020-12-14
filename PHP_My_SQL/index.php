@@ -15,14 +15,21 @@
         $connection -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Connection a la base de donne Réussie"."<br>";
         /// 2.2
-        $request = $connection->prepare("SELECT * FROM films_tim_burton");
+        //$request = $connection->prepare("SELECT * FROM films_tim_burton");
+        //$request->execute();
+        //while($result = $request->fetch()){
+          ///print_r($result);
+        //  echo "Liste des films"."<br>";
+        //  echo "Film N°".$result["ID"]." ".$result["title"]." avec".$result["acteurs_principaux"]." paru en".$result["anee"]." a pour etat :".$result["etat"]."<br>";
+        //}
+        /// 3.1
+        $request = $connection->prepare("SELECT acteurs_principaux * FROM films_tim_burton");
         $request->execute();
         while($result = $request->fetch()){
           ///print_r($result);
           echo "Liste des films"."<br>";
-          echo "Film N°".$result["ID"]." ".$result["title"]." avec".$result["acteurs_principaux"]." paru en".$result["anee"]." a pour etat :".$result["etat"]."<br>";
+          echo "$result["acteurs_principaux"]";
         }
-
       } catch (PDOException $e) {
         echo "Echec de la connection : ".$e->getMessage();
       }
