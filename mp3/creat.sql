@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `stockcomposants`(
   `reference` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `nom` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `boitier` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `prixHT` decimal(10,0) NOT NULL,
+  `prixHT` decimal(6,2) NOT NULL,
   `qteStock` smallint(5) UNSIGNED DEFAULT '0',
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
